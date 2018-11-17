@@ -11,7 +11,7 @@ const loginError = "Ошибка! Логин должен быть от 4 до 1
 
 const isLoginValid = (login) => (login.length  >= 4 && login.length  <= 16);
 
-const isLoginUnique = (allLogins, login) => (allLogins.includes(login));
+const isLoginUnique = (allLogins, login) => (!allLogins.includes(login));
 
 console.log(isLoginUnique(logins, login));
 
@@ -19,7 +19,7 @@ const addLogin = (allLogins,login) => {
 
   if (isLoginValid(login)) {
 
-    if (!isLoginUnique(allLogins, login)) {
+    if (isLoginUnique(allLogins, login)) {
       allLogins.push(login);
       alert(addSucces);
     } else {
