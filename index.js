@@ -14,14 +14,14 @@ const isLoginUnique = (allLogins, login) => allLogins.includes(login);
 
 const addLogin = (allLogins, login) => {
   if (isLoginUnique(allLogins, login)) {
-    return alert(loginBusy);
+    return console.log(loginBusy);
   }
 
   if (!isLoginValid(login)) {
-    return alert(loginError);
+    return console.log(loginError);
   }
   allLogins.push(login);
-  return alert(addSucces);
+  return console.log(addSucces);
 };
 
 addLogin(logins, login);
