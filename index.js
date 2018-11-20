@@ -13,12 +13,11 @@ const isLoginValid = login => login.length >= 4 && login.length <= 16;
 const isLoginUnique = (allLogins, login) => allLogins.includes(login);
 
 const addLogin = (allLogins, login) => {
-  if (isLoginUnique(allLogins, login)) {
-    return loginBusy;
-  }
-
   if (!isLoginValid(login)) {
     return loginError;
+  }
+  if (isLoginUnique(allLogins, login)) {
+    return loginBusy;
   }
   allLogins.push(login);
   return addSucces;
